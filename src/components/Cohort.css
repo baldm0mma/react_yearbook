@@ -1,0 +1,9 @@
+.allStaff {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.staff_header {
+  background-color: aliceblue;
+  color: blue;
+}
