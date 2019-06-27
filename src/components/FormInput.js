@@ -27,7 +27,6 @@ class FormInput extends Component {
   };
 
   clearForm = () => {
-    // const { id, name, quote, superlative, status } = this.state;
     this.setState({ id: 0, name: '', quote:'', photo: 'https://placekitten.com/200/300', superlative: '' })
   }
 
@@ -36,8 +35,9 @@ class FormInput extends Component {
     return (
       <>
         <h2>Add a human</h2>
-        <form className='form-input'>
+        <form className='form-input ui input'>
           <input
+            className='input-style'
             type='text'
             name='name'
             value={name}
@@ -45,6 +45,7 @@ class FormInput extends Component {
             onChange={this.handleStateChange}
           />
           <input
+            className='input-style'
             type='text'
             name='quote'
             value={quote}
@@ -52,6 +53,7 @@ class FormInput extends Component {
             onChange={this.handleStateChange}
           />
           <input
+            className='input-style'
             type='text'
             name='superlative'
             value={superlative}
