@@ -2,20 +2,20 @@ import React from 'react';
 import './Person.css';
 
 const Person = props => {
-  
+  const { name, quote, photo, superlative } = props;
   return (
     <div className='member_container'>
       <div className='photo_container'>
-        <img className='photo' src={props.photo} alt='staff member' />
+        <img className='photo' src={photo} alt='staff member' />
       </div>
       <div className='name'>
-        {props.name}
+        {name}
       </div>
       <div className='quote'>
-        "{props.quote}"
+        "{quote}"
       </div>
       <div className='superlative'>
-        {props.superlative}
+        {superlative}
       </div>
     </div>
   );

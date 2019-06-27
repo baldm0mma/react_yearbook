@@ -23,6 +23,7 @@ const Cohort = props => {
       </div>
     </div>
   );
+  
 }
 
 export default Cohort;
