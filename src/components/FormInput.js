@@ -8,22 +8,28 @@ class FormInput extends Component {
       id: 0,
       name: '',
       quote: '',
+      photo: 'https://placekitten.com/200/300',
       superlative: '',
-      status: ''
+      status: 'staff'
     };
   }
 
   handleStateChange = e => {
+    e.persist();
     const { name, value } = e.target;
-    this.setState({ [name]: value });
-    console.log(this.state.status);
+    this.setState({ [name]: value }, () => console.log(this.state));
   };
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.addNewHuman(this.state);
-    console.log(this.state.name);
+    this.clearForm();
   };
+
+  clearForm = () => {
+    // const { id, name, quote, superlative, status } = this.state;
+    this.setState({ id: 0, name: '', quote:'', photo: 'https://placekitten.com/200/300', superlative: '' })
+  }
 
   render() {
     const { name, quote, superlative } = this.state;
@@ -52,18 +58,14 @@ class FormInput extends Component {
             placeholder='Superlative'
             onChange={this.handleStateChange}
           />
-          <select>
+          <select name='status' onChange={this.handleStateChange}>
             <option
-              name='status'
               value='staff'
-              onChange={this.handleStateChange}
             >
               Staff
             </option>
             <option
-              name='status'
-              value='student'
-              onChange={this.handleStateChange}
+              value='students'
             >
               Student
             </option>

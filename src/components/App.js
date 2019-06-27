@@ -15,7 +15,7 @@ class App extends Component {
 
   addNewHuman = newHuman => {
     const add = { ...newHuman, id: Date.now() };
-    this.setState({ [newHuman.status]: [...this.state[newHuman.status], add] });
+    this.setState({ [newHuman.status]: [...this.state[newHuman.status], add] }, () => console.log(this.state));
   };
 
   render() {
