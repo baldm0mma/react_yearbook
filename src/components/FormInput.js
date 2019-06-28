@@ -10,14 +10,16 @@ class FormInput extends Component {
       quote: '',
       photo: 'https://placekitten.com/200/300',
       superlative: '',
-      status: 'staff'
+      status: 'staff',
+      filter: ''
     };
   }
 
   handleStateChange = e => {
     e.persist();
     const { name, value } = e.target;
-    this.setState({ [name]: value }, () => console.log(this.state));
+    this.setState({ [name]: value });
+    this.props.createFilterTerm(value);
   };
 
   handleSubmit = e => {
@@ -73,6 +75,7 @@ class FormInput extends Component {
             </option>
           </select>
           <button onClick={this.handleSubmit}>Submit!</button>
+          <input type='text' name='filter' placeholder='Filter Here' value={this.state.filter} onChange={this.handleStateChange}></input>
         </form>
       </>
     );

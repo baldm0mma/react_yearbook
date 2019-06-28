@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput should render the correct elements with the correct information 1`] = `
+<Fragment>
+  <h2>
+    Add a human
+  </h2>
+  <form
+    className="form-input ui input"
+  >
+    <input
+      className="input-style"
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      type="text"
+      value=""
+    />
+    <input
+      className="input-style"
+      name="quote"
+      onChange={[Function]}
+      placeholder="Quote"
+      type="text"
+      value=""
+    />
+    <input
+      className="input-style"
+      name="superlative"
+      onChange={[Function]}
+      placeholder="Superlative"
+      type="text"
+      value=""
+    />
+    <select
+      name="status"
+      onChange={[Function]}
+    >
+      <option
+        value="staff"
+      >
+        Staff
+      </option>
+      <option
+        value="students"
+      >
+        Student
+      </option>
+    </select>
+    <button
+      onClick={[Function]}
+    >
+      Submit!
+    </button>
+  </form>
+</Fragment>
+`;

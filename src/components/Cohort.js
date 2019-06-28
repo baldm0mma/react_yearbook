@@ -3,7 +3,19 @@ import Person from './Person';
 import './Cohort.css';
 
 const Cohort = props => {
-  const staffMembers = props.staff.map(member => {
+  
+  const filteredStaff = props.staff.filter(member => {
+    console.log('2', props.filter);
+    if (props.filter === undefined) {
+      console.log('if');
+      return member;
+    } else {
+      console.log('else');
+      return member.name.includes(props.filter.toLowerCase()) || member.name.includes(props.filter.toUpperCase());
+    }
+  })
+
+  const staffMembers = filteredStaff.map(member => {
     return (
       <Person
         key={member.id}
