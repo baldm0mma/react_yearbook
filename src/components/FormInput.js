@@ -8,30 +8,38 @@ class FormInput extends Component {
       id: 0,
       name: '',
       quote: '',
+      photo: 'https://placekitten.com/200/300',
       superlative: '',
-      status: ''
+      status: 'staff',
+      filter: ''
     };
   }
 
   handleStateChange = e => {
+    e.persist();
     const { name, value } = e.target;
     this.setState({ [name]: value });
-    console.log(this.state.status);
+    this.props.createFilterTerm(value);
   };
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.addNewHuman(this.state);
-    console.log(this.state.name);
+    this.clearForm();
   };
+
+  clearForm = () => {
+    this.setState({ id: 0, name: '', quote:'', photo: 'https://placekitten.com/200/300', superlative: '' })
+  }
 
   render() {
     const { name, quote, superlative } = this.state;
     return (
       <>
         <h2>Add a human</h2>
-        <form className='form-input'>
+        <form className='form-input ui input'>
           <input
+            className='input-style'
             type='text'
             name='name'
             value={name}
@@ -39,6 +47,7 @@ class FormInput extends Component {
             onChange={this.handleStateChange}
           />
           <input
+            className='input-style'
             type='text'
             name='quote'
             value={quote}
@@ -46,29 +55,27 @@ class FormInput extends Component {
             onChange={this.handleStateChange}
           />
           <input
+            className='input-style'
             type='text'
             name='superlative'
             value={superlative}
             placeholder='Superlative'
             onChange={this.handleStateChange}
           />
-          <select>
+          <select name='status' onChange={this.handleStateChange}>
             <option
-              name='status'
               value='staff'
-              onChange={this.handleStateChange}
             >
               Staff
             </option>
             <option
-              name='status'
-              value='student'
-              onChange={this.handleStateChange}
+              value='students'
             >
               Student
             </option>
           </select>
           <button onClick={this.handleSubmit}>Submit!</button>
+          <input type='text' name='filter' placeholder='Filter Here' value={this.state.filter} onChange={this.handleStateChange}></input>
         </form>
       </>
     );

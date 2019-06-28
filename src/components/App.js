@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       staff: people.staff,
-      students: people.students
+      students: people.students,
+      filter: ''
     };
   }
 
@@ -18,13 +19,17 @@ class App extends Component {
     this.setState({ [newHuman.status]: [...this.state[newHuman.status], add] });
   };
 
+  createFilterTerm = (term) => {
+    this.setState({ filter: term }, () => console.log('1', this.state.filter));
+  }
+
   render() {
     return (
       <div className='App'>
         <header className='App-header'>
           <h1>Turing Yearbook</h1>
         </header>
-        <FormInput addNewHuman={this.addNewHuman} />
+        <FormInput addNewHuman={this.addNewHuman} createFilterTerm={this.createFilterTerm} />
         <Cohort staff={this.state.staff} students={this.state.students} />
       </div>
     );

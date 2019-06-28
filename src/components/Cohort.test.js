@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import App from './App';
+import Cohort from './Cohort';
 
-describe('App', () => {
+describe('Cohort', () => {
   it('should render the correct elements with the correct information', () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<Cohort staff={ [] } students={ [] }/>);
 
     expect(wrapper).toMatchSnapshot();
   });

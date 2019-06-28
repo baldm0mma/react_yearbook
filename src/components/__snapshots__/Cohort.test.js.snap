@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cohort should render the correct elements with the correct information 1`] = `
+<div>
+  <h2
+    className="staff_header"
+  >
+    Staff
+  </h2>
+  <div
+    className="allStaff"
+  />
+  <h2
+    className="student_header"
+  >
+    Students
+  </h2>
+  <div
+    className="allStudents"
+  />
+</div>
+`;

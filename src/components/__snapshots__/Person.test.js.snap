@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Person should render the correct elements with the correct information 1`] = `
+<div
+  className="member_container"
+>
+  <div
+    className="photo_container"
+  >
+    <img
+      alt="staff member"
+      className="photo"
+    />
+  </div>
+  <div
+    className="name"
+  />
+  <div
+    className="quote"
+  >
+    "
+    "
+  </div>
+  <div
+    className="superlative"
+  />
+</div>
+`;
