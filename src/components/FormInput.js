@@ -29,8 +29,14 @@ class FormInput extends Component {
   };
 
   clearForm = () => {
-    this.setState({ id: 0, name: '', quote:'', photo: 'https://placekitten.com/200/300', superlative: '' })
-  }
+    this.setState({
+      id: 0,
+      name: '',
+      quote: '',
+      photo: 'https://placekitten.com/200/300',
+      superlative: ''
+    });
+  };
 
   render() {
     const { name, quote, superlative } = this.state;
@@ -63,19 +69,17 @@ class FormInput extends Component {
             onChange={this.handleStateChange}
           />
           <select name='status' onChange={this.handleStateChange}>
-            <option
-              value='staff'
-            >
-              Staff
-            </option>
-            <option
-              value='students'
-            >
-              Student
-            </option>
+            <option value='staff'>Staff</option>
+            <option value='students'>Student</option>
           </select>
           <button onClick={this.handleSubmit}>Submit!</button>
-          <input type='text' name='filter' placeholder='Filter Here' value={this.state.filter} onChange={this.handleStateChange}></input>
+          <input
+            type='text'
+            name='filter'
+            placeholder='Filter Here'
+            value={this.state.filter}
+            onChange={this.handleStateChange}
+          />
         </form>
       </>
     );

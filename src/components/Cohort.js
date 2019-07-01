@@ -13,7 +13,7 @@ const Cohort = props => {
       console.log('else');
       return member.name.includes(props.filter.toLowerCase()) || member.name.includes(props.filter.toUpperCase());
     }
-  })
+  });
 
   const staffMembers = filteredStaff.map(member => {
     return (
